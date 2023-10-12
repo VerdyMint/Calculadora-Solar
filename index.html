@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="shortcut icon" href="Assets/Ícone.png" type="image/x-icon" />
+    <title>Calculadora</title>
+</head>
+<body>
+<header></header>
+
+<main class="Principal">
+    <img src="Assets/Decoração Sol.png" class="SolDeco">
+    <noscript><h1 class="Aviso">Esse site é puro JavaScript. Caso queira usar o site, acesse em um dispositivo compatível.</h1></noscript>
+
+    <label for="kW"><tl>Quantos Reais você gasta por mês?</tl><br><sl>Valor arredondado, de Preferência</sl></label>
+    <input type="number" id="Gasto" class="InputNumero" style="width: 60px;" placeholder="R$" style="width: 50px;" title="Insira seu Gasto Mensal em Reais">
+
+    <span class="Esp" id="Esp"></span>
+    
+    <label for="Sol">Quantas horas de sol sua cidade tem em média por Dia?<br></label>
+    <input type="number" id="Sol" class="InputNumero" readonly value="1" min="1" style="width: 50px;" title="Selecione com as Setas quantas Horas de Sol sua Cidade tem por Média">
+    <div>
+        <button class="Editar1" id="Menos1" onclick="Editar('menos','Sol')"><img src="Assets/SetaEsquerda.png" class="Icon"></button><button class="Editar2" id="Mais1" onclick="Editar('mais','Sol')"><img src="Assets/SetaDireta.png" class="Icon"></button>
+    </div>
+
+    <span class="Esp" id="Esp"></span>
+
+    <p>Onde você quer salvar o seu resultado?</p>
+
+    <label style="display:inline-block;">
+        <input class="Checkbox" type="radio" title="Os valores serão salvos para você acessar depois. Eles são visíveis apenas para você" name="Salvar" value="Sim">
+        <b>Navegador</b>
+    </label>
+    <label style="display:inline-block;">
+        <input class="Checkbox" type="radio" title="Os valores serão salvos em um arquivo." name="Salvar" value="Baixar">
+        <b>Arquivo</b>
+    </label>
+    <label style="display:inline-block;">
+        <input class="Checkbox" type="radio" title="Os valores não serão salvos. Assim que você sair, o resultado será excluido." name="Salvar" value="Nao" checked>
+        <b>Nenhum</b>
+    </label>
+    
+    <span class="Esp" id="Esp" style="height: 20px;"></span>
+
+    <button onclick="Calcular()" class="Botao Calcular" title="Belo botão, né?">Calcular!</button>
+
+    <button 
+    class="Botao Excluir" 
+    title="Isso irá excluir os resultados salvos." 
+    onclick="if (confirm('Você quer excluir seus resultados?')) {localStorage.clear()} else{alert('...')}"
+    >
+    <img src="Assets/Deletar.png" class="Icon"></button>
+
+    <div id="Resultado" class="Resultado">
+        <span id="PotenciaM" class="Resultados"></span>
+        <span id="PlacasN" class="Resultados"></span>
+        <span id="AreaN" class="Resultados"></span>
+        <span id="Retorno" class="Resultados"></span>
+        <span id="Custo" class="Resultados"></span>
+    </div>
+    <img src="Assets/Decoração1.png" class="BarraDeco">
+</main>
+
+<footer></footer>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+<script src="Main.js"></script>
+
+<!-- Vercel Analitycs -->
+<script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
