@@ -1,0 +1,85 @@
+Olá!
+Se você está aqui, você provavelmente está procurando informações. Vou listar tudo de importante que há para saber sobre a calculadora.
+
+--------------------------------------------------
+!!! IMPORTANTE !!!
+--------------------------------------------------
+A Calculadora é um projeto para uma Insígnia Escoteira e tem como objetivo de levar outros a refletir sobre as energias renováveis. Ela está longe de ser algo profissional e 100% preciso, logo, se você tem interesse em instalar energia solar em sua propriedade, sempre faça uma simulação com profissionais.
+--------------------------------------------------
+Privacidade
+--------------------------------------------------
+A Calculadora utiliza um serviço da Vercel para contagem de acesso, e os dados que consigo acessar são os seguintes:
+
+- País de Acesso
+- Navegador Utilizado
+- Sistema Operacional Utilizado
+- Páginas mais Acessadas
+- Site com Maior Redirecionamentos para o Site
+- Pessoas Acessando o Site no Momento
+
+Caso você se sinta violado de qualquer forma, entre em contato e farei o máximo para remover seus dados, sendo possível até desabilitar completamente o serviço de análise. Porém, isso é apenas em casos extremos.
+--------------------------------------------------
+Fórmulas
+--------------------------------------------------
+As Fórmulas foram elaboradas com ajuda de algúem que já trabalhou com um projeto similar anteriormente. Logo, a fórmula é baseada em um projeto já existente.
+
+Também, o site utiliza uma série de constantes que os valores não mudam, e só podem ser alterados diretamente no código.
+
+-- Constantes:
+Os Valores em parênteses são as letras que representam o valor tanto no código quanto na fórmula.
+
+- Potência da Placa (P) = 0,35 Kw
+- Custo da Placa (CP) = R$ 900
+- Custo do Kw (CKw) = R$ 0,73 
+- Custo de Instalação (CI) = R$ 3500
+- Dimensão da Placa (D) = 3 m
+- Porcentagem de Horário de Pico (Pico) = 50% (0,5)
+
+-- Variáveis
+Os Valores que foram inseridos pelo usuário.
+
+- Horas de Sol (Sol)
+- Gasto (Gasto)
+
+-- Potência Mensal (PotMensal)
+O resultado sempre terá duas casas decimais mesmo que nulas.
+
+
+(Sol * Pico) * P * 30
+
+-- Kilowatts Gastos (kW)
+O resultado sempre terá duas casas decimais mesmo que nulas.
+
+Gasto / CKw
+
+-- Placas Necessárias (PlacasN)
+O resultado é arredondado.
+
+kW / PotMensal
+
+-- Área Necessária (AreaN)
+O resultado sempre terá duas casas decimais mesmo que nulas.
+
+PlacasN * D
+
+-- Custo Total (CustoT)
+
+CI + (CP * PlacasN)
+
+-- Tempo (Tempo)
+O resultado é arredondado.
+
+CustoT / Gasto
+--------------------------------------------------
+
+Isso é tudo. Fico feliz que tenha lido. ;)
+
+
+
+
+
+
+
+
+
+

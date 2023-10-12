@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --fonte-principal:'Open Sans', sans-serif;
+    --cor-texto: #EEEEEE;
+    --cor-fundo: #222831;
+    --cor-contraste: #393E46;
+    --cor-destaque: #FFD369;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Tags Personalizadas */
+ds {
+    color: var(--cor-destaque);
+    font-weight: 700;
+}
+
+tl {
+    font-size: 1.5rem;
+}
+
+sl {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #b0b0b0
+}
+
+/* Estilos */
+
+.InputNumero:hover, .Botao:hover, .Dropdown:hover {
+    box-shadow: 0px 0px 5px 1px var(--cor-contraste);
+}
+
+.Aviso {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-destaque);
+}
+
+body {
+    background-color: var(--cor-fundo);
+    width: 97vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.SolDeco {
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 210px;  
+    z-index: -1;
+}
+
+.BarraDeco {
+    transform: scale(-1, -1); 
+    position: absolute; 
+    right: -20px; 
+    bottom: 0px; 
+    z-index: -1;
+}
+
+.Principal {
+    position: relative;
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    color: var(--cor-texto);
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 5% 0;
+    position: relative;
+    gap: 10px;
+    width: 100%;
+}
+
+.InputNumero {
+    width: 50px;
+    text-align: center;
+    background-color: var(--cor-contraste);
+    color: var(--cor-texto);
+    border: 0;
+    border-radius: 5px;
+    padding: 0.5%;
+    font-size: 1.5rem;
+    width: 30%;
+    transition: ease 0.1s;
+    font-weight: 700;
+}
+
+.Dropdown {
+    background-color: var(--cor-contraste);
+    color: var(--cor-texto);
+    border: 0;
+    border-radius: 5px;
+    padding: 0.5%;
+    font-size: 1.5rem;
+    width: 8%;
+    text-align: center;
+    transition: ease 0.1s;
+    font-weight: 700;
+}
+
+.Checkbox {
+    margin-right: 7px;
+}
+
+.Salvar {
+    display: none;
+}
+
+.Salvar:before {
+    background-color: var(--cor-contraste);
+    width: 150px;
+    height: 10px;
+}
+
+.Editar1 {
+    border-radius: 10px 0px 0px 10px;
+    background-color: var(--cor-contraste);
+    border: 0px;
+}
+
+.Editar2 {
+    border-radius: 0px 10px 10px 0px;
+    border: 0px;
+    background-color: var(--cor-contraste);
+}
+
+.Editar1:hover, .Editar2:hover {background-color: #353941; transition: ease 0.5s;} 
+.Editar1:active {background-color: #653737; transition: ease 0.05s;}
+.Editar2:active {background-color: #2e4d30; transition: ease 0.05s;}
+
+.Calcular {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: var(--cor-contraste);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    border: 0px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.Calcular:hover {
+    transition: background-image 1s;
+    box-shadow: 0px 0px 10px 2px var(--cor-destaque);
+    background: linear-gradient(90deg, hsla(38, 81%, 52%, 1) 0%, hsla(62, 76%, 64%, 1) 100%);
+}
+
+.Calcular:active {
+    box-shadow: 0px 0px 10px 2px var(--cor-destaque) inset;
+    background: linear-gradient(90deg, hsla(62, 76%, 64%, 1) 100% , hsla(38, 81%, 52%, 1) 0%);
+}
+
+.Excluir {
+    width: 40px; 
+    height: 40px; 
+    display: flex; 
+    justify-content: center;
+    transition: all 0.5s;
+}
+
+.Icon {
+    filter: invert(100%); 
+}
+
+.Excluir:hover, .Excluir:active {
+    background-color: #653737;
+    box-shadow: 0px 0px 5px 1px #653737 ;
+}
+
+.Resultado {
+    flex-direction: column;
+    height: 100vh;
+    margin: 50vh 25% 0 25%;
+    gap: 25px;
+    display: none;
+}
+
+/* .Resultados {
+    margin: 10px;
+} */
+
+.Botao {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: var(--cor-contraste);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    border: 0px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.5s;  
+}
+
+
+.Esp {
+    width: 100vw;
+    height: 70px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    background-color: var(--cor-contraste);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #1b1f25;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: var(--cor-contraste);
+}
+
+.InputNumero::-webkit-outer-spin-button, .InputNumero::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    display: none;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    body {
+        height: 150vh;
+    }
+
+    .BarraDeco, .SolDeco {
+        display: none;
+    }
+
+    .Principal {
+        padding: 5% 1%;
+    }
+
+    .InputNumero {
+        padding: 3.5%;
+    }
+
+    .Resultado {
+        margin: 50vh 5% 0 5%;
+    }
+
+    .Icon {
+        width: 35px;
+    }
+
+    .Excluir {
+        width: 40px; 
+        height: 40px; 
+    }
+
+    .Calcular {
+        padding: 20px;
+    }
+}
