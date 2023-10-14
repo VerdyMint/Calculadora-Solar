@@ -8,11 +8,20 @@
     --cor-destaque: #FFD369;
 }
 
+@keyframes rotate {
+    0% {transform: rotate(5deg);}
+    50% {transform: rotate(-5deg);}
+    100% {transform: rotate(5deg);}
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
+a {
+    color: #b0b0b0;
+}
 /* Tags Personalizadas */
 ds {
     color: var(--cor-destaque);
@@ -26,7 +35,7 @@ tl {
 sl {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #b0b0b0
+    color: #b0b0b0;
 }
 
 /* Estilos */
@@ -47,6 +56,60 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+}
+
+.BoasVindas {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--cor-fundo);
+    z-index: 10;
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    gap: 20px;
+    padding: 0px;
+}
+
+.Ola {
+    font-size: 5rem;
+}
+
+.Eai {
+    font-size: 2rem;
+}
+
+.Info {
+    font-size: 1.25rem; 
+    width: 75%;
+}
+
+.VamosLa {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: var(--cor-contraste);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    border: 0px;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.5s;  
+}
+
+.VamosLa:hover {
+    animation-name: rotate;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    background-color: var(--cor-destaque);
+    box-shadow: 0px 0px 10px 2px var(--cor-destaque);
+    color: var(--cor-fundo);
 }
 
 .SolDeco {
@@ -152,21 +215,25 @@ body {
 }
 
 .Calcular:hover {
-    transition: background-image 1s;
+    transition: all 1s;
     box-shadow: 0px 0px 10px 2px var(--cor-destaque);
-    background: linear-gradient(90deg, hsla(38, 81%, 52%, 1) 0%, hsla(62, 76%, 64%, 1) 100%);
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
 }
 
 .Calcular:active {
-    box-shadow: 0px 0px 10px 2px var(--cor-destaque) inset;
-    background: linear-gradient(90deg, hsla(62, 76%, 64%, 1) 100% , hsla(38, 81%, 52%, 1) 0%);
+    transition: all 50ms;
+    box-shadow: 0px 0px 10px 2px #e89f21;
+    background-color: #e89f21;
 }
 
 .Excluir {
-    width: 40px; 
-    height: 40px; 
+    width: fit-content; 
+    height: fit-content; 
     display: flex; 
     justify-content: center;
+    font-size: 5px;
+    align-items: center;
     transition: all 0.5s;
 }
 
@@ -182,8 +249,8 @@ body {
 .Resultado {
     flex-direction: column;
     height: 100vh;
-    margin: 50vh 25% 0 25%;
-    gap: 25px;
+    margin: 50vh 10% 0 10%;
+    gap: 10px;
     display: none;
 }
 
@@ -217,7 +284,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #1b1f25;
+    background-color: #1b1f10;
 }
 
 ::-webkit-scrollbar-corner {
@@ -233,10 +300,6 @@ body {
 @media (max-width: 600px) {
     body {
         height: 150vh;
-    }
-
-    .BarraDeco, .SolDeco {
-        display: none;
     }
 
     .Principal {
@@ -263,4 +326,27 @@ body {
     .Calcular {
         padding: 20px;
     }
+
+    .NoCell {
+        display: none;
+    }
+    
+    .Ola {
+        font-size: 3rem;
+    }
+
+    .Eai {
+        font-size: 1.5rem;
+    }
+
+    .Info {
+        width: 90%;
+    }
+
+    .VamosLa {
+        animation-name: rotate;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+    }
 }
+

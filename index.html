@@ -9,18 +9,33 @@
     <title>Calculadora</title>
 </head>
 <body>
-<header></header>
-
+<header class="Cabecalho"></header>
+<div class="BoasVindas" id="BoasVindas">
+    <span style="text-align: center;">
+        <h1 class="Ola">Olá!</h1>
+        <h3 class="Eai">Boas Vindas à Calculadora de Energia Solar.</h3>
+    </span>
+    <p class="Info">
+        A Energia Solar é uma das energias mais limpas que podemos produzir, e com o tempo, está ficando cada vez mais 
+        acessível. A Energia Solar é um investimento que pode fazer uma grande diferença na sua conta de luz, além de que ele retorna o 
+        investimento à médio prazo. Essa calculadora te ajuda a descobrir quantas placas você precisaria, em quantos meses haverá o 
+        retorno e mais. Em menos de dois minutos, você pode conhecer mais de como a energia solar pode ajudar na sua 
+        economia!
+    </p>
+    <button onclick="document.getElementById('BoasVindas').style.display = 'none'" class="VamosLa">Vamos Lá!</button>
+</div>
 <main class="Principal">
-    <img src="Assets/Decoração Sol.png" class="SolDeco">
+    <img src="Assets/Decoração Sol.png" class="SolDeco NoCell">
     <noscript><h1 class="Aviso">Esse site é puro JavaScript. Caso queira usar o site, acesse em um dispositivo compatível.</h1></noscript>
 
-    <label for="kW"><tl>Quantos Reais você gasta por mês?</tl><br><sl>Valor arredondado, de Preferência</sl></label>
+    <label for="kW"><tl>Quantos Reais você gasta por mês em energia?</tl><br><sl>Valor arredondado, de Preferência</sl></label>
     <input type="number" id="Gasto" class="InputNumero" style="width: 60px;" placeholder="R$" style="width: 50px;" title="Insira seu Gasto Mensal em Reais">
 
     <span class="Esp" id="Esp"></span>
     
-    <label for="Sol">Quantas horas de sol sua cidade tem em média por Dia?<br></label>
+    <label for="Sol">Quantas horas de sol sua cidade tem em média por Dia?<br>
+        <sl>Você pode facilmente descobrir essa informação com <a rel="noreferrer" target="_blank" href="https://docs.google.com/spreadsheets/d/176iM5biI_V0hYjANY1XFxzBLb66RCKMstptA5GyUKpg/edit?usp=sharing">essa tabela</a> ou com uma IA. <b>Curitiba:</b> 5 Horas</sl>
+    </label>
     <input type="number" id="Sol" class="InputNumero" readonly value="1" min="1" style="width: 50px;" title="Selecione com as Setas quantas Horas de Sol sua Cidade tem por Média">
     <div>
         <button class="Editar1" id="Menos1" onclick="Editar('menos','Sol')"><img src="Assets/SetaEsquerda.png" class="Icon"></button><button class="Editar2" id="Mais1" onclick="Editar('mais','Sol')"><img src="Assets/SetaDireta.png" class="Icon"></button>
@@ -31,28 +46,32 @@
     <p>Onde você quer salvar o seu resultado?</p>
 
     <label style="display:inline-block;">
-        <input class="Checkbox" type="radio" title="Os valores serão salvos para você acessar depois. Eles são visíveis apenas para você" name="Salvar" value="Sim">
-        <b>Navegador</b>
+        <input class="Checkbox" type="radio" title="Os valores serão salvos para você acessar depois. Eles são visíveis apenas para você." name="Salvar" value="Sim">
+        <b>Navegador</b><br>
+        <sl>Seus resultados serão carregados quando você voltar.</sl>
     </label>
-    <label style="display:inline-block;">
-        <input class="Checkbox" type="radio" title="Os valores serão salvos em um arquivo." name="Salvar" value="Baixar">
-        <b>Arquivo</b>
+    <label style="display:inline-block;" class="NoCell">
+        <input class="Checkbox NoCell" type="radio" title="Os valores serão salvos em um arquivo." name="Salvar" value="Baixar">
+        <b class="NoCell">Arquivo</b><br>
+        <sl class="NoCell">Seus resultados serão exportados em um arquivo de texto.</sl>
     </label>
     <label style="display:inline-block;">
         <input class="Checkbox" type="radio" title="Os valores não serão salvos. Assim que você sair, o resultado será excluido." name="Salvar" value="Nao" checked>
-        <b>Nenhum</b>
+        <b>Nenhum</b><br>
+        <sl>Seus resultados não serão salvos.</sl>
     </label>
     
-    <span class="Esp" id="Esp" style="height: 20px;"></span>
+    <span class="Espx" id="Esp" style="height: 20px;"></span>
 
     <button onclick="Calcular()" class="Botao Calcular" title="Belo botão, né?">Calcular!</button>
 
+    <sl>Apagar Dados Salvos</sl>
     <button 
     class="Botao Excluir" 
     title="Isso irá excluir os resultados salvos." 
     onclick="if (confirm('Você quer excluir seus resultados?')) {localStorage.clear()} else{alert('...')}"
-    >
-    <img src="Assets/Deletar.png" class="Icon"></button>
+    ><img src="Assets/Deletar.png" class="Icon"></button>
+
 
     <div id="Resultado" class="Resultado">
         <span id="PotenciaM" class="Resultados"></span>
@@ -61,17 +80,18 @@
         <span id="Retorno" class="Resultados"></span>
         <span id="Custo" class="Resultados"></span>
     </div>
-    <img src="Assets/Decoração1.png" class="BarraDeco">
+    <img src="Assets/Decoração1.png" class="BarraDeco NoCell">
 </main>
 
 <footer></footer>
 </body>
 </html>
 
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
 <script src="Main.js"></script>
 
 <!-- Vercel Analitycs -->
 <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
